@@ -162,6 +162,21 @@ If you use this tool, please cite:
 3. Helming KC, et al. (2014) ARID1B is a specific vulnerability in ARID1A-mutant cancers. *Nature Medicine* 20:251-254
 4. Mavrakis KJ, et al. (2016) Disordered methionine metabolism in MTAP/CDKN2A-deleted cancers leads to dependence on PRMT5. *Science* 351:1208-1213
 
+## Drug Validation Module (`docking/`)
+
+After identifying synthetic lethal paralog pairs from the DepMap screen, candidate dependencies can be validated by structure-based docking of small molecules or PROTAC degraders against the surviving paralog.
+
+### Case Study: IMPDH1 / IMPDH2
+
+IMPDH1 and IMPDH2 are paralogs catalyzing the rate-limiting step in *de novo* GMP biosynthesis. IMPDH2 is frequently overexpressed across cancers, and tumors with IMPDH1 loss become preferentially dependent on IMPDH2 — a textbook synthetic lethal relationship recoverable by the OLS pipeline above.
+
+| Notebook | Purpose |
+| --- | --- |
+| `docking/IMPDH2_PROTAC_Docking_v3.ipynb` | AutoDock Vina docking of IMPDH2-targeting PROTAC candidates against IMPDH2 catalytic site; binding pose visualization with py3Dmol and matplotlib summaries. |
+| `docking/IMPDH1_PROTAC_Docking_Comparison.ipynb` | Parallel docking against IMPDH1 to assess paralog selectivity (off-target risk for the synthetic lethal partner). |
+
+> **Note on notebook outputs:** Interactive py3Dmol 3D viewers do not render on GitHub. Static matplotlib figures and docking score summaries are preserved in-line. Run the notebook locally or in Colab to view interactive structures.
+
 ## License
 
 MIT License
